@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JB's Profile</title>
+<style>
+
+/* Root Variables for Colors */
+
+:root {
+
+--dark-blue: #222E95;
+
+--medium-blue: #0A5DA6;
+
+--light-blue: #9AADF9;
+
+--white: #FFFFFF;
+
+--green: #027333;
+
+}
+
+/* Global Styles */
+
+body {
+
+font-family: Arial, sans-serif;
+
+margin: 0;
+
+padding: 0;
+
+background: var(--white);
+
+color: var(--dark-blue);
+
+}
+
+/* Header */
+
+header {
+
+background: var(--medium-blue);
+
+padding: 20px;
+
+text-align: center;
+
+color: var(--white);
+
+font-size: 24px;
+
+font-weight: bold;
+
+}
+
+/* Navigation */
+
+nav {
+
+display: flex;
+
+justify-content: center;
+
+background: var(--light-blue);
+
+padding: 10px;
+
+}
+
+nav a {
+
+color: var(--white);
+
+text-decoration: none;
+
+margin: 0 15px;
+
+font-size: 18px;
+
+}
+
+/* Responsive Navigation */
+
+@media (max-width: 768px) {
+
+nav {
+
+flex-direction: column;
+
+text-align: center;
+
+}
+
+nav a {
+
+margin: 10px 0;
+
+}
+
+}
+
+/* Layout Container */
+
+.container {
+
+display: grid;
+
+grid-template-columns: 1fr 1fr;
+
+gap: 20px;
+
+padding: 20px;
+
+}
+
+/* Responsive Grid */
+
+@media (max-width: 768px) {
+
+.container {
+
+grid-template-columns: 1fr;
+
+}
+
+}
+
+/* About Me Section */
+
+.about-me {
+
+background: var(--dark-blue);
+
+color: var(--white);
+
+padding: 20px;
+
+text-align: center;
+
+border-radius: 8px;
+
+}
+
+.about-me img {
+
+width: 150px;
+
+height: 150px;
+
+border-radius: 50%;
+
+border: 3px solid var(--white);
+
+object-fit: cover;
+
+margin-bottom: 15px;
+
+}
+
+/* Profile Details */
+
+.profile-details {
+
+background: var(--green);
+
+color: var(--white);
+
+padding: 20px;
+
+border-radius: 8px;
+
+}
+
+.profile-details h2 {
+
+border-bottom: 2px solid var(--white);
+
+padding-bottom: 5px;
+
+}
+
+.profile-details p {
+
+margin: 5px 0;
+
+font-size: 16px;
+
+}
+
+.profile-details strong {
+
+font-weight: bold;
+
+}
+
+/* Gallery Section */
+
+.gallery-section {
+
+padding: 20px;
+
+}
+
+.gallery-section h2 {
+
+text-align: center;
+
+margin-top: 40px;
+
+}
+
+.gallery-grid {
+
+display: grid;
+
+grid-template-columns: repeat(4, 1fr);
+
+gap: 15px;
+
+padding: 10px;
+
+}
+
+.gallery-grid img,
+
+.gallery-grid video {
+
+width: 100%;
+
+border-radius: 8px;
+
+object-fit: cover;
+
+}
+
+/* Footer */
+
+footer {
+
+background: var(--dark-blue);
+
+color: var(--white);
+
+text-align: center;
+
+padding: 10px;
+
+margin-top: 20px;
+
+}
+</style>
+</head>
+<body>
+<header>JB's Gallery</header>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Me</a>
+<a href="gallery.html">My Gallery</a>
+<a href="contactus.html">Contact Me</a>
+</nav>
+
+<!-- My Gallery Section -->
+<div class="gallery-section">
+<h2>My Gallery – Photos & Videos</h2>
+<div class="gallery-grid">
+<!-- 4 Photos -->
+<img src="images/ownpicture.jpg" alt="Photo 1">
+<img src="images/ownpicture2.jpg" alt="Photo 2">
+<img src="images/ownpicture3.jpg" alt="Photo 3">
+<img src="images/ownpicture4.jpg" alt="Photo 4">
+<!-- 4 Videos -->
+<video controls>
+<source src="videos/video1.mp4" type="video/mp4">
+
+      Your browser does not support the video tag.
+</video>
+<video controls>
+<source src="videos/video1.mp4" type="video/mp4">
+
+      Your browser does not support the video tag.
+</video>
+<video controls>
+<source src="videos/video1.mp4" type="video/mp4">
+
+      Your browser does not support the video tag.
+</video>
+<video controls>
+<source src="videos/video1.mp4" type="video/mp4">
+
+      Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<footer>© 2025 JB Alejandro</footer>
+</body>
+</html>
+ 
