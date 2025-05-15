@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Me "JB"</title>
+<style>
+   body {
+     margin: 0;
+     font-family: 'Arial', sans-serif;
+     background-color: #111;
+     color: #fff;
+   }
+   nav {
+     background-color: #000;
+     padding: 15px 0;
+     text-align: center;
+     position: sticky;
+     top: 0;
+     z-index: 1000;
+   }
+   nav a {
+     color: #fff;
+     text-decoration: none;
+     margin: 0 20px;
+     font-size: 18px;
+     font-weight: bold;
+   }
+   nav a.active {
+     color: #e91e63;
+     text-decoration: underline;
+   }
+   nav a:hover {
+     color: #e91e63;
+   }
+   .about-section {
+     display: flex;
+     align-items: stretch;
+     min-height: 100vh;
+   }
+   .about-image,
+   .about-content {
+     flex: 1;
+   }
+   .about-image {
+     background-color: #111;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow: hidden;
+   }
+   .about-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+   .about-content {
+     background-color: #111;
+     padding: 60px 40px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     position: relative;
+     overflow: hidden;
+     height: 500px;
+   }
+   .scrolling-text-wrapper {
+     position: relative;
+     height: 100%;
+     overflow: hidden;
+   }
+   .scrolling-text {
+     position: absolute;
+     width: 100%;
+     white-space: pre-line;
+   }
+   .about-content h1 {
+     font-size: 42px;
+     margin-bottom: 10px;
+   }
+   .about-content h3 {
+     font-size: 20px;
+     font-weight: normal;
+   }
+   .about-content h3 span {
+     color: #e91e63;
+     font-weight: bold;
+   }
+   .about-content .btn {
+     background-color: #e91e63;
+     color: #fff;
+     padding: 10px 20px;
+     text-decoration: none;
+     border-radius: 30px;
+     font-weight: bold;
+     width: fit-content;
+     margin-top: 20px;
+   }
+   @media (max-width: 768px) {
+     .about-section {
+       flex-direction: column;
+     }
+     .about-image img {
+       height: auto;
+     }
+     .about-content {
+       padding: 30px 20px;
+       text-align: center;
+       align-items: center;
+     }
+     .about-content .btn {
+       margin: 0 auto;
+     }
+   }
+</style>
+</head>
+<body>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">My Dashboard</a>
+    <a href="about.html" class="active">About Me</a>
+    <a href="gallery.html">My Gallery</a>
+    <a href="myspace.html">My Space</a>
+    <a href="contactus.html">Contact Me</a>
+</nav>
+<section class="about-section">
+<div class="about-image">
+<img src="images/ownpicture2.jpg" alt="Developer Photo">
+</div>
+<div class="about-content">
+<h1>About Me "JB"</h1>
+<h3>Student <span>& Web Designer</span></h3>
+
+<div class="scrolling-text-wrapper">
+  <div class="scrolling-text" id="scrollingText">
+Hey! I’m JB — just a regular teen who loves tech, creativity, and making things work online.
+
+I’m currently studying Information Technology at Adamson University, where I’m learning how to turn my curiosity into real skills. I enjoy creating websites that don’t just look good but feel fun to explore.
+
+This website is a small space where I share a bit about myself — thanks for dropping by, and I hope you enjoy browsing it!
+  </div>
+</div>
+
+<a href="contactus.html" class="btn">Let's Talk</a>
+</div>
+</section>
+
+<script>
+// Highlight the current nav link
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        if (window.location.href.includes(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+    });
+
+    // Log Let's Talk button click
+    const talkBtn = document.querySelector('.btn');
+    if (talkBtn) {
+        talkBtn.addEventListener('click', function () {
+            console.log("Let's Talk button clicked.");
+        });
+    }
+
+    // Scrolling text animation using JavaScript
+    const scrollText = document.getElementById('scrollingText');
+    let pos = scrollText.parentElement.offsetHeight;
+    scrollText.style.top = pos + 'px';
+
+    function scroll() {
+        pos--;
+        scrollText.style.top = pos + 'px';
+
+        // Reset position when text scrolls out
+        if (pos + scrollText.offsetHeight < 0) {
+            pos = scrollText.parentElement.offsetHeight;
+        }
+
+        requestAnimationFrame(scroll);
+    }
+
+    scroll();
+});
+</script>
+</body>
+</html>
