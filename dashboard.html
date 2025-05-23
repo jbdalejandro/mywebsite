@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JB's Personal Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f8;
+    }
+
+    .topnav {
+      background: linear-gradient(to right, #4b6cb7, #182848);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .topnav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .topnav a:hover {
+      text-decoration: underline;
+    }
+
+    .welcome-msg {
+      text-align: center;
+      font-size: 22px;
+      color: #333;
+      margin: 20px 0;
+      font-weight: bold;
+      min-height: 30px;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .box {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .box.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      text-align: center;
+    }
+
+    .calendar div {
+      padding: 10px;
+      background: #e0e0e0;
+      border-radius: 6px;
+    }
+
+    .calendar .highlight {
+      background: #ff4c4c;
+      color: white;
+      font-weight: bold;
+    }
+
+    .bar-container {
+      background: #e0e0e0;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .bar {
+      height: 20px;
+      color: white;
+      padding-left: 10px;
+      line-height: 20px;
+    }
+
+    .pizza { width: 100%; background: #ff9800; }
+    .coco { width: 95%; background: #f44336; }
+    .sisig { width: 70%; background: #4caf50; }
+    .icecream { width: 60%; background: #2196f3; }
+    .sayote { width: 50%; background: #9c27b0; }
+    .taho { width: 60%; background: #3f51b5; }
+    .shanghai { width: 80%; background: #009688; }
+    .friedchicken { width: 95%; background: #e91e63; }
+
+    .mallbar {
+      height: 18px;
+      margin-bottom: 10px;
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .mall-fill {
+      height: 100%;
+      text-align: right;
+      padding-right: 10px;
+      color: white;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    .moa { width: 95%; background: #673ab7; }
+    .mega { width: 70%; background: #3f51b5; }
+    .lazaro { width: 70%; background: #009688; }
+    .north { width: 100%; background: #e91e63; }
+    .pampanga { width: 50%; background: #ff5722; }
+    .baguio { width: 80%; background: #607d8b; }
+    .trinoma { width: 60%; background: #795548; }
+
+    ul {
+      padding-left: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">My Dashboard</a>
+    <a href="about.html">About Me</a>
+    <a href="gallery.html">My Gallery</a>
+    <a href="myspace.html">My Space</a>
+    <a href="contactus.html">Contact Me</a>
+  </div>
+
+  <!-- JavaScript Welcome Message -->
+  <div class="welcome-msg" id="welcome"></div>
+
+  <!-- Dashboard Layout -->
+  <div class="dashboard">
+    <!-- Calendar Box -->
+    <div class="box">
+      <h3>July Calendar-My Birthday</h3>
+      <div class="calendar">
+        <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
+        <div class="highlight">8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+        <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
+        <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
+        <div>29</div><div>30</div><div>31</div>
+      </div>
+    </div>
+
+    <!-- Favorite Foods -->
+    <div class="box">
+      <h3>My Favorite Foods</h3>
+      <div class="bar-container"><div class="bar pizza">Pizza - 100%</div></div>
+      <div class="bar-container"><div class="bar coco">Coco Milk Tea - 95%</div></div>
+      <div class="bar-container"><div class="bar friedchicken">Fried Chicken - 95%</div></div>
+      <div class="bar-container"><div class="bar shanghai">Shanghai - 80%</div></div>
+      <div class="bar-container"><div class="bar sisig">Sisig - 70%</div></div>
+      <div class="bar-container"><div class="bar taho">Taho - 60%</div></div>
+      <div class="bar-container"><div class="bar icecream">Ice Cream - 60%</div></div>
+      <div class="bar-container"><div class="bar sayote">Ginisang Sayote - 50%</div></div>
+    </div>
+
+    <!-- Shopping List -->
+    <div class="box">
+      <h3>Shopping List</h3>
+      <ul>
+        <li>Shoes</li>
+        <li>Bags
+          <ul>
+            <li>Coach</li>
+            <li>Anello</li>
+          </ul>
+        </li>
+        <li>Clothes
+          <ul>
+            <li>Penshoppe</li>
+            <li>Bench</li>
+            <li>Girbaud</li>
+          </ul>
+        </li>
+        <li>PS5</li>
+      </ul>
+    </div>
+
+    <!-- Favorite Malls -->
+    <div class="box">
+      <h3>Favorite Malls</h3>
+      <div class="mallbar"><div class="mall-fill north">SM North EDSA - 100%</div></div>
+      <div class="mallbar"><div class="mall-fill moa">SM MOA - 95%</div></div>
+      <div class="mallbar"><div class="mall-fill baguio">SM Baguio - 80%</div></div>
+      <div class="mallbar"><div class="mall-fill mega">SM Megamall - 70%</div></div>
+      <div class="mallbar"><div class="mall-fill lazaro">SM San Lazaro - 70%</div></div>
+      <div class="mallbar"><div class="mall-fill trinoma">Trinoma - 60%</div></div>
+      <div class="mallbar"><div class="mall-fill pampanga">SM Pampanga - 50%</div></div>
+    </div>
+  </div>
+
+  <!-- Visible JavaScript -->
+  <script>
+    const text = "Welcome to JB's Personal Dashboard!";
+    const el = document.getElementById('welcome');
+    let index = 0;
+
+    function typeWriter() {
+      if (index < text.length) {
+        el.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 70);
+      }
+    }
+
+    typeWriter();
+
+    window.addEventListener("load", () => {
+      document.querySelectorAll(".box").forEach((box, i) => {
+        setTimeout(() => {
+          box.classList.add("visible");
+        }, i * 200);
+      });
+    });
+  </script>
+</body>
+</html>
